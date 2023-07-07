@@ -22,7 +22,7 @@ public class EventsTestingApplication {
 	}
 
 	@SneakyThrows
-	@Scheduled(fixedRate = 5000)
+	@Scheduled(fixedRate = 60000)
 	public void kafkaSender() {
 		String json = new String(Files.readAllBytes(Paths.get("src/main/resources/example.json")));
 		jsonProducer.send(json);
